@@ -1,0 +1,17 @@
+micronaut:
+  server:
+    port: 8082
+
+datasources:
+  default:
+    url: ${JDBC_URL:`jdbc:h2:mem:default;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE`}
+    username: ${JDBC_USER:sa}
+    password: ${JDBC_PASSWORD:""}
+    driverClassName: ${JDBC_DRIVER:org.h2.Driver}
+jpa:
+  default:
+    properties:
+      hibernate:
+        show_sql: true
+        hbm2ddl:
+          auto: create-drop
